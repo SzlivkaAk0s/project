@@ -309,3 +309,88 @@ footer:hover .footer-extra {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
+.nodeko {
+  color: #1F6521;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nodeko:hover {
+  color: #A4A71E;
+  text-decoration: none;
+}
+
+.nodeko:active {
+  color: #1F2605;
+  text-decoration: none;
+}
+
+/*Mobil nézet*/
+@media (max-width: 768px) {
+  header {
+    grid-template-columns: auto 1fr auto;
+    padding: 10px 20px;
+  }
+  nav ul {
+    gap: 15px;
+    font-size: 0.9rem;
+  }
+  .logo img {
+    height: 40px;
+    float: right;
+  }
+  main {
+    margin: 100px 0 100px 0;
+    padding: 20px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .aloldal {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 5%;
+  }
+  .bal-oldal, .jobb-oldal {
+    gap: 15px;
+  }
+  .bal-oldal .leiras h1 {
+    font-size: 1.5rem;
+  }
+  .szobak {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 20px;
+    gap: 10px;
+  }
+  .footer-right {
+    gap: 10px;
+  }
+} 
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .logo img {
+    height: 35px;
+  }
+  .tobb {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+  }
+  .foglalas {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+  .footer-right img {
+    width: 30px;
+    height: 30px;
+  }
+}
