@@ -561,3 +561,39 @@ footer:hover .footer-extra {
   }
 }
 
+
+
+/* SZŰRŐ PANEL */
+.szuro {
+  background-color: #1F2605;
+  color: rgb(67, 117, 25);
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.szuro h3 {
+  color: #D6CE15;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.szuro h4 {
+  color: #D6CE15;
+  margin: 20px 0 10px;
+}
+
+.szuro label {
+  color: #D6CE15;
+  font-size: 14px;
+}
+
+/* AJÁNLATOK GRID */
+.ajanlatok {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 25px;
+  max-width: 1000px;
+}
