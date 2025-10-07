@@ -481,8 +481,8 @@ footer:hover .footer-extra {
   }
 
   nav ul {
-    width: 70%;
-    gap: 15px;
+    width: 100%;
+    gap: 5px;
   }
 
   .logo img {
