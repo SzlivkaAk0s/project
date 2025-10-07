@@ -561,14 +561,12 @@ footer:hover .footer-extra {
   }
 }
 
-
-
-/* SZŰRŐ PANEL */
 .szuro {
   background-color: #1F2605;
   color: rgb(67, 117, 25);
   padding: 20px;
-  width: 250px;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
@@ -589,7 +587,6 @@ footer:hover .footer-extra {
   font-size: 14px;
 }
 
-/* AJÁNLATOK GRID */
 .ajanlatok {
   display: flex;
   flex-wrap: wrap;
