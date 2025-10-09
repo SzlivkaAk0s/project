@@ -5,13 +5,7 @@
   font-family: Arial, sans-serif;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #e0ecd1;
-}
-
+/*Fejléc*/
 header { 
   position: fixed; 
   top: 0; 
@@ -25,13 +19,14 @@ header {
   padding: 10px 40px; 
   z-index: 1000; }
 
+/*Navbar*/
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 100%;
 }
 
 nav ul li {
@@ -97,10 +92,12 @@ nav a {
   color: white;
   transition: 0.3s;
 }
+
 nav a:hover {
   color: #D6CE15;
 }
 
+/*Logo*/
 .logo img {
   height: 50px;
   transition: filter 0.2s;
@@ -108,6 +105,7 @@ nav a:hover {
   cursor: pointer;
   
 }
+
 .logo a:hover img {
   filter: drop-shadow(0px 0px 6px #A4A71E);
   transform: scale(1.2)
@@ -117,10 +115,12 @@ nav a:hover {
   transform: scale(1);
 }
 
-h1{
-  text-align: center;
-  color: #1F2605;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+/*Body*/
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #e0ecd1;
 }
 
 main {
@@ -133,18 +133,8 @@ main {
   justify-items: center;
 }
 
-.card, .card2 {
-  background: white;
-  border: 2px solid #1F2605;
-  border-radius: 15px;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
 
+/*Card*/
 .card { 
   background: white; 
   border: 2px solid #1F2605; 
@@ -158,7 +148,6 @@ main {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
   transition: box-shadow 0.4s ease, transform 0.2s ease; 
 }
-
 
 .card:hover {
   transform: translateY(-5px);
@@ -182,12 +171,12 @@ main {
 
 .aloldal {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
   padding: 40px 7%;
 }
 
-.bal-oldal {
+.bal-oldal, .jobb-oldal{
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -198,19 +187,14 @@ main {
   color: #1F6521;
   margin-bottom: 10px;
 }
+
 .bal-oldal .leiras p {
   margin-bottom: 15px;
   line-height: 1.4;
 }
 
-.jobb-oldal {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
 .szabad-helyek {
-  background: #fffff0;
+  background: #ffffd6;
   border: 2px solid #1F2605;
   border-radius: 15px;
   padding: 20px;
@@ -229,16 +213,6 @@ main {
   margin-bottom: 15px;
 }
 
-.szobak {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.szobak .card {
-  width: 100%;
-}
-
 .info { 
     margin-top: 12px; 
     display: flex; 
@@ -255,7 +229,7 @@ main {
   display: block;
   margin: 0 auto;
   padding: auto;
-  width: 50%;
+  width: 100%;
   height: auto;
   border-radius: 15px;
   border: 2px solid #1F2605;
@@ -389,6 +363,7 @@ footer:hover .footer-extra {
   visibility: visible;
 }
 
+/*Strong*/
 .nodeko {
   color: #1F6521;
   text-decoration: none;
@@ -415,6 +390,7 @@ footer:hover .footer-extra {
   padding: 10px;
 }
 
+/*Csapat*/
 .csapat {
   flex: 0 0 280px;               
   text-align: center;
@@ -464,7 +440,7 @@ footer:hover .footer-extra {
 
 .csapat .image-box:hover img {
   transform: scale(1.05);
-  filter: blur(2px);
+  filter: blur(0);
 }
 
 .csapat .leiras {
@@ -474,15 +450,17 @@ footer:hover .footer-extra {
   line-height: 1.4;
 }
 
+/*Média*/
 @media (max-width: 768px) {
   header {
-    grid-template-columns: 1fr auto 1fr;
-    padding: 10px 20px;
+    grid-template-columns: auto;
+    padding: auto;
+    margin: auto;
   }
 
   nav ul {
-    width: 100%;
     gap: 5px;
+    width: 100%;
   }
 
   .logo img {
@@ -490,6 +468,7 @@ footer:hover .footer-extra {
   }
 
   main {
+    display: auto;
     margin: 100px 0 80px 0;
     padding: 20px;
     grid-template-columns: 1fr;
@@ -500,12 +479,9 @@ footer:hover .footer-extra {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    gap: 20px;
   }
 
-  .bal-oldal,
-  .jobb-oldal {
+  .bal-oldal, .jobb-oldal {
     width: 100%;
     text-align: center;
     align-items: center;
@@ -561,8 +537,9 @@ footer:hover .footer-extra {
   }
 }
 
+/*Szűrő*/
 .szuro {
-  background-color: #1F2605;
+  background-color: #1F6521;
   color: rgb(67, 117, 25);
   padding: 20px;
   width: 100%;
@@ -587,10 +564,26 @@ footer:hover .footer-extra {
   font-size: 14px;
 }
 
-.ajanlatok {
+.bal, .jobb{
+  color: white;
+  background-color: #1F6521;
+  border-radius: 15px;
+  padding: 5% 15%;
+  border: #0d350e solid 2px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 25px;
-  max-width: 1000px;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.bal:hover, .jobb:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+.bal, h1, p, .jobb, h1, p{
+  text-align: center;
 }
