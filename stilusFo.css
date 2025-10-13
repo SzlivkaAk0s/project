@@ -493,6 +493,29 @@ footer:hover .footer-extra {
   padding: 20px;
   box-sizing: border-box;
 }
+
+.bal, .jobb{
+  color: white;
+  background-color: #1F6521;
+  border-radius: 15px;
+  padding: 5% 15%;
+  border: #0d350e solid 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bal:hover, .jobb:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+.bal, h1, p, .jobb, h1, p{
+  text-align: center;
+}
+
 /*Média*/
 @media (max-width: 768px) {
   header {
@@ -608,7 +631,25 @@ footer:hover .footer-extra {
     margin-left: 0px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+  }
 
+  .bal, .jobb{
+    padding: 10% 5%;
+    gap: 15px;
+  }
+  .bal h1, .jobb h1 {
+    font-size: 1.5rem;
+  }
+  .bal p, .jobb p {
+    font-size: 1rem;
+  }
+  .card{
+    width: 200px;
+    aspect-ratio: 3 / 4;
+    padding: 10px;
+    gap: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: box-shadow 0.4s ease, transform 0.2s ease;
   }
 }
 
@@ -616,24 +657,4 @@ footer:hover .footer-extra {
 
 
 
-.bal, .jobb{
-  color: white;
-  background-color: #1F6521;
-  border-radius: 15px;
-  padding: 5% 15%;
-  border: #0d350e solid 2px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.bal:hover, .jobb:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
-}
-
-.bal, h1, p, .jobb, h1, p{
-  text-align: center;
-}
