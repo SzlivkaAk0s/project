@@ -8,9 +8,9 @@
 /*Fejléc*/
 header { 
   position: fixed; 
+  width: 100%; 
   top: 0; 
   left: 0; 
-  width: 100%; 
   background: #1F6521; 
   border-bottom: 3px solid #1F2605; 
   display: grid; 
@@ -117,20 +117,23 @@ nav a:hover {
 
 /*Body*/
 body {
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(31, 101, 33, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(212, 206, 21, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 40%, rgba(164, 167, 30, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #e8f5e8 0%, #bdf0bd 50%, #e8f5e8 100%);
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #e0ecd1;
+
 }
 
 main {
   flex: 1;
   margin: 120px 0 80px 0;
-  padding: 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  justify-items: center;
+  padding: 0; /* Eltávolítjuk a paddingot, mert a cards-container kezeli */
+  display: block; /* Grid helyett block */
 }
 
 
@@ -450,12 +453,60 @@ footer:hover .footer-extra {
   line-height: 1.4;
 }
 
+.szuro {
+  position: fixed;
+  top: 120px;
+  left: 20px;
+  background-color: #1F6521;
+  color: #D6CE15;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  z-index: 900;
+  height: auto;
+}
+
+.szuro h3 {
+  color: #D6CE15;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.szuro h4 {
+  color: #D6CE15;
+  margin: 20px 0 10px;
+}
+
+.szuro label {
+  color: #D6CE15;
+  font-size: 14px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  width: calc(100% - 310px); /* Helyet hagy a szűrőnek + margó */
+  margin-left: 290px; /* Helyet hagy a szűrőnek asztali nézetben */
+  padding: 20px;
+  box-sizing: border-box;
+}
 /*Média*/
 @media (max-width: 768px) {
   header {
     grid-template-columns: auto;
-    padding: auto;
     margin: auto;
+    width: 100%;
+    gap: 10px;
+    text-align: center;
+    height: auto;
+    row-gap: 10px;
+    padding: 10px 10px;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   nav ul {
@@ -535,34 +586,35 @@ footer:hover .footer-extra {
     gap: 20px;
     overflow-x: visible;      
   }
+
+  main {
+    flex-direction: column;
+    margin: 100px 0 80px 0;
+  }
+
+  .szuro {
+    position: static;
+    top: auto;
+    left: auto;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+  }
+  
+  .cards-container {
+    width: 100%;
+    margin-left: 0;
+    padding: 10px;
+    margin-left: 0px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+
+  }
 }
 
-/*Szűrő*/
-.szuro {
-  background-color: #1F6521;
-  color: rgb(67, 117, 25);
-  padding: 20px;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-}
 
-.szuro h3 {
-  color: #D6CE15;
-  font-size: 20px;
-  margin-bottom: 15px;
-}
 
-.szuro h4 {
-  color: #D6CE15;
-  margin: 20px 0 10px;
-}
 
-.szuro label {
-  color: #D6CE15;
-  font-size: 14px;
-}
 
 .bal, .jobb{
   color: white;
@@ -576,8 +628,6 @@ footer:hover .footer-extra {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-
 
 .bal:hover, .jobb:hover {
   transform: translateY(-5px);
