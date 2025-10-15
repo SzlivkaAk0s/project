@@ -892,7 +892,7 @@ footer:hover .footer-extra {
     flex-direction: column;
   }
   .szuro-header {
-    top: 70px;
+    top: 130px;
     padding: 8px 15px;
   }
 
@@ -953,5 +953,6 @@ footer:hover .footer-extra {
     padding: 25px;
     max-height: none;
   }
+
 
 }
