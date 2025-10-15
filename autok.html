@@ -38,16 +38,20 @@
 
     <div class="szuro-resz">
       <h4>Bérlés napi ára</h4>
-      <label><input type="checkbox"> 7999Ft vagy kevesebb</label><br>
-      <label><input type="checkbox"> 8000Ft - 11999Ft</label><br>
-      <label><input type="checkbox"> 12000Ft +</label>
+      <label><input type="checkbox" class="price-filter" value="0-7999"> 7999Ft vagy kevesebb</label>
+      <label><input type="checkbox" class="price-filter" value="8000-11999"> 8000Ft - 11999Ft</label>
+      <label><input type="checkbox" class="price-filter" value="12000-999999"> 12000Ft +</label>
     </div>
 
     <div class="szuro-resz">
       <h4>Ajtai száma</h4>
-      <label><input type="checkbox"> 2 Ajtó</label><br>
-      <label><input type="checkbox"> 4 Ajtó</label><br>
-      <label><input type="checkbox"> 5+ Ajtó</label>
+      <label><input type="checkbox" class="door-filter" value="2"> 2 Ajtó</label>
+      <label><input type="checkbox" class="door-filter" value="4"> 4 Ajtó</label>
+      <label><input type="checkbox" class="door-filter" value="5"> 5+ Ajtó</label>
+    </div>
+    
+    <div class="szuro-resz">
+      <button id="reset-filters" class="tobb">Szűrők törlése</button>
     </div>
   </aside>
   
@@ -60,7 +64,7 @@
         <div class="adat">
           <h2>Wagen A1</h2>
           <p>Elegáns, kényelmes, megbízható.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -73,7 +77,7 @@
         <div class="adat">
           <h2>Wagen A2</h2>
           <p>Luxus terepjáró, prémium élmény.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -86,7 +90,7 @@
         <div class="adat">
           <h2>Wagen A3</h2>
           <p>Teljesen elektromos, modern technológia.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -99,7 +103,7 @@
         <div class="adat">
           <h2>Wagen A4</h2>
           <p>Elegáns, kényelmes, megbízható.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -112,7 +116,7 @@
         <div class="adat">
           <h2>Wagen A5</h2>
           <p>Luxus terepjáró, prémium élmény.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -125,7 +129,7 @@
         <div class="adat">
           <h2>Wagen A6</h2>
           <p>Teljesen elektromos, modern technológia.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -138,7 +142,7 @@
         <div class="adat">
           <h2>Wagen A7</h2>
           <p>Elegáns, kényelmes, megbízható.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -151,7 +155,7 @@
         <div class="adat">
           <h2>Wagen A8</h2>
           <p>Luxus terepjáró, prémium élmény.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -164,7 +168,7 @@
         <div class="adat">
           <h2>Wagen A9</h2>
           <p>Teljesen elektromos, modern technológia.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -177,7 +181,7 @@
         <div class="adat">
           <h2>Wagen A10</h2>
           <p>Elegáns, kényelmes, megbízható.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -190,7 +194,7 @@
         <div class="adat">
           <h2>Wagen A11</h2>
           <p>Luxus terepjáró, prémium élmény.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -203,7 +207,7 @@
         <div class="adat">
           <h2>Wagen A12</h2>
           <p>Teljesen elektromos, modern technológia.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -216,7 +220,7 @@
         <div class="adat">
           <h2>Wagen A13</h2>
           <p>Elegáns, kényelmes, megbízható.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -229,7 +233,7 @@
         <div class="adat">
           <h2>Wagen A14</h2>
           <p>Luxus terepjáró, prémium élmény.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -242,7 +246,7 @@
         <div class="adat">
           <h2>Wagen A15</h2>
           <p>Teljesen elektromos, modern technológia.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -255,7 +259,7 @@
         <div class="adat">
           <h2>Wagen A16</h2>
           <p>Elegáns, kényelmes, megbízható.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -268,7 +272,7 @@
         <div class="adat">
           <h2>Wagen A17</h2>
           <p>Luxus terepjáró, prémium élmény.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
@@ -281,12 +285,57 @@
         <div class="adat">
           <h2>Wagen A18</h2>
           <p>Teljesen elektromos, modern technológia.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
+          <button class="tobb">Részletek</button>
         </div>
       </div>
     </div>
   </div>
 </main>
+
+<div class="popup-overlay" id="popup">
+  <div class="popup-content">
+    <span class="popup-close" id="close-popup">&times;</span>
+    <div class="popup-header">
+      <h2 id="popup-title">Autó neve</h2>
+    </div>
+    <div class="popup-image">
+      <img id="popup-img" src="" alt="Autó kép">
+    </div>
+    <div class="popup-details">
+      <div class="popup-detail">
+        <h4>Napi bérleti díj</h4>
+        <p id="popup-price">0 Ft</p>
+      </div>
+      <div class="popup-detail">
+        <h4>Ajtók száma</h4>
+        <p id="popup-doors">0</p>
+      </div>
+      <div class="popup-detail">
+        <h4>Üzemanyag</h4>
+        <p id="popup-fuel">-</p>
+      </div>
+      <div class="popup-detail">
+        <h4>Évjárat</h4>
+        <p id="popup-year">-</p>
+      </div>
+      <div class="popup-detail">
+        <h4>Teljesítmény</h4>
+        <p id="popup-power">-</p>
+      </div>
+      <div class="popup-detail">
+        <h4>Férőhely</h4>
+        <p id="popup-seats">-</p>
+      </div>
+    </div>
+    <div class="popup-description">
+      <p id="popup-description">Autó leírása</p>
+    </div>
+    <div class="popup-actions">
+      <button class="foglalas" id="popup-reserve">Foglalás</button>
+      <button class="tobb" id="popup-close-btn">Bezárás</button>
+    </div>
+  </div>
+</div>
 
 <footer>
   <div class="footer-main">
@@ -320,5 +369,6 @@
     </a>
   </div>
 </footer>
+<script src="kereses.js"></script>
 </body>
 </html>
