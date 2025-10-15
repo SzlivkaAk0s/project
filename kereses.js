@@ -224,8 +224,10 @@ function createCards() {
         <div class="adat">
           <h2>${car.name}</h2>
           <p>${car.description}</p>
-          <p class="car-details">Ár: ${car.price} Ft/nap | Ajtók: ${car.doors} | Üzemanyag: ${car.fuel}</p>
-          <button class="tobb details-btn">Részletek</button>
+          <br>
+          <p>${car.price} Ft/nap</p>
+          <br>
+          <button class="tobb details-btn">Részletek</button> 
         </div>
       </div>
     `;
@@ -246,7 +248,6 @@ function createCards() {
 // Popup megjelenítése
 function showPopup(index) {
   const car = cars[index];
-  
   document.getElementById('popup-title').textContent = car.name;
   document.getElementById('popup-img').src = car.image;
   document.getElementById('popup-price').textContent = car.price + ' Ft/nap';

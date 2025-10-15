@@ -283,12 +283,7 @@ main {
   font-weight: bold; 
   color: #1F6521; 
 } 
-.car-details {
-  font-size: 0.9rem;
-  color: #1F2605;
-  margin: 8px 0;
-  font-weight: normal;
-}
+
 .logokep img {
   display: block;
   margin: 0 auto;
@@ -303,6 +298,7 @@ main {
 .tobb { 
   border: none; 
   border-radius: 20px; 
+  width: 100%;
   padding: 6px 14px; 
   font-weight: bold; 
   cursor: pointer;
@@ -759,13 +755,16 @@ footer:hover .footer-extra {
     left: 50%;
     transform: translateX(-50%);
   }
+
   nav ul {
     gap: 5px;
     width: 100%;
   }
+  
   .logo img {
     height: 40px;
   }
+
   main {
     display: auto;
     margin: 100px 0 80px 0;
@@ -773,38 +772,47 @@ footer:hover .footer-extra {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
   .aloldal {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .bal-oldal, .jobb-oldal {
     width: 100%;
     text-align: center;
     align-items: center;
   }
+
   .bal-oldal .leiras h1 {
     font-size: 1.6rem;
   }
+
   .bal-oldal .leiras p {
     text-align: justify;
     font-size: 1rem;
     line-height: 1.5;
   }
+
   .logokep img {
     width: 60%;
   }
+
   .szobak {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
   }
+
   .csapat {
     flex: 0 0 80%; 
     max-width: 320px;
   }
+
   .csapat .image-box {
     height: 180px;
   }
+
   footer {
     flex-direction: column;
     text-align: center;
@@ -812,21 +820,25 @@ footer:hover .footer-extra {
     padding: 15px;
     gap: 10px;
   }
+
   .footer-right {
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
   }
+
   .csapatok {
     flex-wrap: wrap;     
     justify-content: center;
     gap: 20px;
     overflow-x: visible;      
   }
+
   main {
     flex-direction: column;
     margin: 100px 0 80px 0;
   }
+
   .szuro {
   position: static;
   top: auto;
@@ -860,25 +872,7 @@ footer:hover .footer-extra {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
   }
-  .bal, .jobb{
-    padding: 10% 5%;
-    gap: 15px;
-  }
-  .bal h1, .jobb h1 {
-    font-size: 1.5rem;
-  }
-  .bal p, .jobb p {
-    font-size: 1rem;
-  }
-  .card{
-    width: 200px;
-    aspect-ratio: 3 / 4;
-    padding: 10px;
-    gap: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    transition: box-shadow 0.4s ease, transform 0.2s ease;
-  }
-  
+
   .popup-content {
     width: 95%;
     padding: 20px;
@@ -891,6 +885,7 @@ footer:hover .footer-extra {
   .popup-actions {
     flex-direction: column;
   }
+
   .szuro-header {
     top: 130px;
     padding: 8px 15px;
@@ -915,44 +910,30 @@ footer:hover .footer-extra {
     font-size: 16px;
     padding: 10px 0;
   }
-
-  .szuro-panel input[type="checkbox"] {
-    transform: scale(1.5);
-    margin-right: 15px;
-  }
-
-  .szuro-panel h3, .szuro-panel h4 {
-    font-size: 18px;
-  }
-
-  .cards-container {
-    width: 100%;
-    margin: 60px auto 20px;
-    padding: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-
   .szuro-panel.open ~ .cards-container {
     margin-left: auto;
     width: 100%;
   }
 
   .active-filters {
-    display: none; /* Mobilon elrejtjük a filter badge-eket a helymegtakarítás érdekében */
+    display: none;
   }
-  
-  /* A meglévő .szuro stílusok felülírása mobil nézetben */
-  .szuro {
-    position: static;
-    top: auto;
-    left: auto;
-    width: 90%;
-    max-width: 500px;
-    margin: 0 auto 20px auto;
-    padding: 25px;
-    max-height: none;
+    .bal, .jobb{
+    padding: 10% 5%;
+    gap: 15px;
   }
-
-
+  .bal h1, .jobb h1 {
+    font-size: 1.5rem;
+  }
+  .bal p, .jobb p {
+    font-size: 1rem;
+  }
+  .card{
+    width: 200px;
+    aspect-ratio: 3 / 4;
+    padding: 10px;
+    gap: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: box-shadow 0.4s ease, transform 0.2s ease;
+  }
 }
