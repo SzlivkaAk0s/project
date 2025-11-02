@@ -578,6 +578,52 @@ const cars = [
     seats: 5
   },
 
+  { 
+    name: "Ford Mustang GT", 
+    description: "Ikonikus sportkupé erőteljes V8-as motorral és hátsókerék-hajtással.", 
+    image: "autok/mustang.jpg",
+    price: 16999,
+    doors: 2,
+    fuel: "Benzin",
+    year: 2021,
+    power: 450,
+    seats: 4
+  },
+  { 
+    name: "Honda Jazz", 
+    description: "Kompakt, tágas belsejű városi autó hibrid hajtással.", 
+    image: "autok/jazz.jpg",
+    price: 7499,
+    doors: 5,
+    fuel: "Hibrid",
+    year: 2020,
+    power: 109,
+    seats: 5
+  },
+  { 
+    name: "Volkswagen ID.4", 
+    description: "Teljesen elektromos SUV, nagy hatótávval és modern belsővel.", 
+    image: "autok/id4.jpg",
+    price: 13499,
+    doors: 5,
+    fuel: "Elektromos",
+    year: 2022,
+    power: 204,
+    seats: 5
+  },
+  { 
+    name: "Land Rover Defender", 
+    description: "Masszív terepjáró kiemelkedő terepképességgel és luxus belsővel.", 
+    image: "autok/defender.jpg",
+    price: 15999,
+    doors: 5,
+    fuel: "Dízel",
+    year: 2021,
+    power: 249,
+    seats: 7
+  },
+  
+
 
 
   
