@@ -1,120 +1,532 @@
 // Autó adatok - minden autóhoz egyedi adatok
 const cars = [
   { 
-    name: "Wagen A1", 
-    description: "Elegáns, kényelmes, megbízható.", 
-    image: "lakasok/lakas1.jpg",
+    name: "Toyota Corolla", 
+    description: "Megbízható, takarékos családi kompakt.", 
+    image: "autok/toyota_corolla.jpg",
     price: 5999,
-    doors: 4,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2020,
+    power: 116,
+    seats: 5
+  },
+  { 
+    name: "Volkswagen Golf", 
+    description: "Kényelmes, jó úttartás, sok extrával.", 
+    image: "autok/Volkswagen_Golf.jpg",
+    price: 6499,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2020,
+    power: 130,
+    seats: 5
+  },
+  { 
+    name: "Ford Focus", 
+    description: "Dinamikus vezetés, tágas belső.", 
+    image: "autok/ford_focus.jpg",
+    price: 5799,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2020,
+    power: 180,
+    seats: 5
+  },
+  { 
+    name: "Honda Civic", 
+    description: "Sportos karakter, megbízható motor.", 
+    image: "autok/honda_civic.jpg",
+    price: 6299,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2010,
+    power: 158,
+    seats: 5
+  },
+  { 
+    name: "Škoda Octavia", 
+    description: "Kiemelkedően tágas csomagtér, komfortos utazás.", 
+    image: "autok/skoda_octavia.jpg",
+    price: 6999,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2020,
+    power: 150,
+    seats: 5
+  },
+  { 
+    name: "Renault Clio", 
+    description: "Kisebb városi autó, gazdaságos használat.", 
+    image: "autok/renault_clio.jpg",
+    price: 4999,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2020,
+    power: 100,
+    seats: 5
+  },
+  { 
+    name: "Opel Astra", 
+    description: "Kiegyensúlyozott, kényelmes napi használatra.", 
+    image: "autok/opel_astra.jpg",
+    price: 5699,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2020,
+    power: 110,
+    seats: 5
+  },
+  { 
+    name: "Kia Ceed", 
+    description: "Jó ár-érték arány, modern felszereltség.", 
+    image: "autok/kia_ceed.jpg",
+    price: 5899,
+    doors: 5,
     fuel: "Benzin",
     year: 2020,
     power: 120,
     seats: 5
   },
   { 
-    name: "Wagen A2", 
-    description: "Luxus terepjáró, prémium élmény.", 
-    image: "lakasok/lakas2.jpg",
-    price: 12999,
+    name: "Hyundai i30", 
+    description: "Megbízható, kényelmes városi és országúti autó.", 
+    image: "autok/Hyundai_i30.jpg",
+    price: 5799,
     doors: 5,
-    fuel: "Dízel",
-    year: 2022,
-    power: 220,
-    seats: 5
-  },
-  { 
-    name: "Wagen A3", 
-    description: "Teljesen elektromos, modern technológia.", 
-    image: "lakasok/lakas3.jpg",
-    price: 10999,
-    doors: 4,
-    fuel: "Elektromos",
-    year: 2023,
-    power: 180,
-    seats: 5
-  },
-  { 
-    name: "Wagen A4", 
-    description: "Elegáns, kényelmes, megbízható.", 
-    image: "lakasok/lakas4.jpg",
-    price: 6999,
-    doors: 4,
     fuel: "Benzin",
-    year: 2019,
-    power: 110,
+    year: 2020,
+    power: 120,
     seats: 5
   },
   { 
-    name: "Wagen A5", 
-    description: "Luxus terepjáró, prémium élmény.", 
-    image: "lakasok/lakas5.jpg",
-    price: 14999,
+    name: "Peugeot 308", 
+    description: "belső, kényelmes utazás.", 
+    image: "autok/peugot_308.jpg",
+    price: 6099,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2020,
+    power: 130,
+    seats: 5
+  },
+  { 
+    name: "BMW i3", 
+    description: "Elektromos városi autó prémium belsővel és csendes futással.", 
+    image: "autok/bmw_i3.jpg",
+    price: 11999,
+    doors: 3,
+    fuel: "Elektromos",
+    year: 2019,
+    power: 170,
+    seats: 4
+  },
+  { 
+    name: "Volkswagen Passat Variant", 
+    description: "Tágas, kényelmes dízel kombi hosszú utakra.", 
+    image: "autok/passat_variant.jpg",
+    price: 9499,
     doors: 5,
     fuel: "Dízel",
-    year: 2023,
-    power: 280,
-    seats: 7
-  },
-  { 
-    name: "Wagen A6", 
-    description: "Teljesen elektromos, modern technológia.", 
-    image: "lakasok/lakas6.jpg",
-    price: 11999,
-    doors: 4,
-    fuel: "Elektromos",
-    year: 2022,
-    power: 200,
-    seats: 5
-  },
-  { 
-    name: "Wagen A7", 
-    description: "Elegáns, kényelmes, megbízható.", 
-    image: "lakasok/lakas7.jpg",
-    price: 7999,
-    doors: 4,
-    fuel: "Hibrid",
     year: 2021,
     power: 150,
     seats: 5
   },
   { 
-    name: "Wagen A8", 
-    description: "Luxus terepjáró, prémium élmény.", 
-    image: "lakasok/lakas1.jpg",
+    name: "Mazda MX-5 Roadster", 
+    description: "Könnyű, hátsókerekes sportautó, élvezetes vezetéshez.", 
+    image: "autok/Mazda_MX5.jpg",
+    price: 14999,
+    doors: 2,
+    fuel: "Benzin",
+    year: 2018,
+    power: 184,
+    seats: 2
+  },
+  { 
+    name: "Toyota RAV4 Hybrid", 
+    description: "Hibrid SUV takarékos motorral és tágas belsővel.", 
+    image: "autok/toyota_rav4.jpg",
+    price: 10999,
+    doors: 5,
+    fuel: "Hibrid",
+    year: 2022,
+    power: 218,
+    seats: 5
+  },
+  { 
+    name: "Fiat 500", 
+    description: "Kis városi autó stílusos dizájnnal és alacsony fogyasztással.", 
+    image: "autok/fiat_500.jpg",
+    price: 5499,
+    doors: 3,
+    fuel: "Benzin",
+    year: 2017,
+    power: 85,
+    seats: 4
+  },
+  { 
+    name: "Mercedes-Benz E220d", 
+    description: "Elegáns, kényelmes dízel szedán prémium belsővel.", 
+    image: "autok/mercedes_e220.jpg",
+    price: 13999,
+    doors: 4,
+    fuel: "Dízel",
+    year: 2021,
+    power: 194,
+    seats: 5
+  },
+  { 
+    name: "Nissan Leaf", 
+    description: "Elektromos családi autó csendes és takarékos üzemmel.", 
+    image: "autok/nissan_leaf.jpg",
+    price: 10499,
+    doors: 5,
+    fuel: "Hibrid",
+    year: 2020,
+    power: 150,
+    seats: 5
+  },
+  { 
+    name: "Suzuki Jimny", 
+    description: "Kisméretű terepjáró, igazi kalandautó nehéz terepre.", 
+    image: "autok/suzuki_jimny.jpg",
+    price: 8999,
+    doors: 3,
+    fuel: "Benzin",
+    year: 2019,
+    power: 102,
+    seats: 4
+  }, 
+
+  { 
+    name: "Tesla Model 3", 
+    description: "Elektromos szedán gyorsulásra és modern technológiára hangolva.", 
+    image: "autok/tesla_model3.jpg",
+    price: 17999,
+    doors: 4,
+    fuel: "Elektromos",
+    year: 2022,
+    power: 283,
+    seats: 5
+  },
+
+  { 
+    name: "Peugeot 5008", 
+    description: "Nagy, hétüléses SUV kényelmes utazásokhoz.", 
+    image: "autok/peugot_5008.jpg",
+    price: 11499,
+    doors: 5,
+    fuel: "Dízel",
+    year: 2021,
+    power: 130,
+    seats: 7
+  },
+
+  { 
+    name: "Audi A4 Avant", 
+    description: "Kényelmes, tágas kombi erős motorral és prémium felszereltséggel.", 
+    image: "autok/audi_a4.jpg",
+    price: 10999,
+    doors: 5,
+    fuel: "Dízel",
+    year: 2020,
+    power: 163,
+    seats: 5
+  },
+
+  { 
+    name: "Hyundai Kona Electric", 
+    description: "Modern elektromos SUV, hosszú hatótávval és csendes futással.", 
+    image: "autok/Hyundai_Electric.jpg",
+    price: 12499,
+    doors: 5,
+    fuel: "Elektromos",
+    year: 2022,
+    power: 204,
+    seats: 5
+  },
+
+  { 
+    name: "Renault Megane", 
+    description: "Megbízható és kényelmes kompakt autó városi és országúti használatra.", 
+    image: "autok/renault_megane.jpg",
+    price: 7499,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2019,
+    power: 115,
+    seats: 5
+  },
+
+  { 
+    name: "Jeep Renegade", 
+    description: "Robusztus kis SUV, terepre és városba egyaránt alkalmas.", 
+    image: "autok/jeep.jpg",
+    price: 9999,
+    doors: 5,
+    fuel: "Hibrid",
+    year: 2021,
+    power: 190,
+    seats: 5
+  },
+
+  { 
+    name: "Mini Cooper 3D", 
+    description: "Sportos, stílusos városi autó agilis vezethetőséggel.", 
+    image: "autok/mini.jpg",
+    price: 8499,
+    doors: 3,
+    fuel: "Benzin",
+    year: 2018,
+    power: 136,
+    seats: 4
+  },
+
+  { 
+    name: "Volvo XC60 Recharge", 
+    description: "Plug-in hibrid SUV prémium komforttal és biztonsági technológiákkal.", 
+    image: "autok/volvo.jpg",
+    price: 15499,
+    doors: 5,
+    fuel: "Hibrid",
+    year: 2022,
+    power: 340,
+    seats: 5
+  },
+
+  { 
+    name: "Dacia Duster", 
+    description: "Megbízható és strapabíró SUV kedvező áron.", 
+    image: "autok/dachia.jpg",
+    price: 7999,
+    doors: 5,
+    fuel: "Dízel",
+    year: 2020,
+    power: 115,
+    seats: 5
+  },
+
+  { 
+    name: "Opel Corsa-e", 
+    description: "Teljesen elektromos városi autó halk működéssel és modern dizájnnal.", 
+    image: "autok/corsae.jpg",
+    price: 9499,
+    doors: 5,
+    fuel: "Elektromos",
+    year: 2021,
+    power: 136,
+    seats: 5
+  },
+
+  { 
+    name: "Skoda Fabia Combi", 
+    description: "Praktikus kis kombi nagy csomagtérrel és alacsony fogyasztással.", 
+    image: "autok/fabia.jpg",
+    price: 6999,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2018,
+    power: 95,
+    seats: 5
+  },
+
+  { 
+    name: "Kia Sportage", 
+    description: "Középkategóriás SUV kényelmes utazáshoz és családi használathoz.", 
+    image: "autok/sportage.jpg",
+    price: 10499,
+    doors: 5,
+    fuel: "Hibrid",
+    year: 2022,
+    power: 230,
+    seats: 5
+  },
+
+  { 
+    name: "Toyota Yaris Hybrid", 
+    description: "Kompakt hibrid autó városi használatra, alacsony fogyasztással.", 
+    image: "autok/yaris.jpg",
+    price: 7999,
+    doors: 5,
+    fuel: "Hibrid",
+    year: 2021,
+    power: 116,
+    seats: 5
+  },
+
+  { 
+    name: "Ford Fiesta", 
+    description: "Könnyen kezelhető, takarékos kisautó mindennapi közlekedéshez.", 
+    image: "autok/fiesta.jpg",
+    price: 6499,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2019,
+    power: 100,
+    seats: 5
+  },
+
+  { 
+    name: "BMW X3", 
+    description: "Tágas prémium SUV kényelmes belsővel és erős motorral.", 
+    image: "autok/x3.jpg",
     price: 13999,
     doors: 5,
     fuel: "Dízel",
-    year: 2022,
-    power: 240,
-    seats: 7
+    year: 2020,
+    power: 190,
+    seats: 5
   },
+
   { 
-    name: "Wagen A9", 
-    description: "Teljesen elektromos, modern technológia.", 
-    image: "lakasok/lakas2.jpg",
-    price: 9999,
-    doors: 4,
-    fuel: "Elektromos",
-    year: 2021,
-    power: 160,
-    seats: 4
-  },
-  { 
-    name: "Wagen A10", 
-    description: "Elegáns, kényelmes, megbízható.", 
-    image: "lakasok/lakas3.jpg",
-    price: 8999,
-    doors: 2,
+    name: "Peugeot 208", 
+    description: "Modern, kis méretű autó fiatalos dizájnnal és gazdaságos motorral.", 
+    image: "autok/208.jpg",
+    price: 6999,
+    doors: 5,
     fuel: "Benzin",
     year: 2020,
-    power: 90,
+    power: 110,
+    seats: 5
+  },
+
+  { 
+    name: "Tesla Model Y", 
+    description: "Elektromos SUV nagy hatótávval és fejlett vezetéstámogató rendszerekkel.", 
+    image: "autok/modely.jpg",
+    price: 17999,
+    doors: 5,
+    fuel: "Elektromos",
+    year: 2023,
+    power: 351,
+    seats: 5
+  },
+
+  { 
+    name: "Volkswagen Polo", 
+    description: "Megbízható, jól felszerelt városi kisautó modern dizájnnal.", 
+    image: "autok/polo.jpg",
+    price: 6799,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2018,
+    power: 95,
+    seats: 5
+  },
+
+  { 
+    name: "Honda CR-V Hybrid", 
+    description: "Nagy méretű hibrid SUV tágas belsővel és kényelmes futással.", 
+    image: "autok/crv.jpg",
+    price: 11999,
+    doors: 5,
+    fuel: "Hibrid",
+    year: 2022,
+    power: 184,
+    seats: 5
+  },
+
+  { 
+    name: "Mazda CX-5", 
+    description: "Elegáns SUV precíz vezethetőséggel és erős motorral.", 
+    image: "autok/cx5.jpg",
+    price: 10499,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2021,
+    power: 165,
+    seats: 5
+  },
+
+  { 
+    name: "Renault Zoe", 
+    description: "Kompakt elektromos autó ideális városi használatra.", 
+    image: "autok/zoe.jpg",
+    price: 8999,
+    doors: 5,
+    fuel: "Elektromos",
+    year: 2020,
+    power: 109,
+    seats: 5
+  },
+
+  { 
+    name: "Mercedes-Benz GLC 300e", 
+    description: "Plug-in hibrid prémium SUV csendes, erős és kényelmes.", 
+    image: "autok/glc.jpg",
+    price: 15999,
+    doors: 5,
+    fuel: "Hibrid",
+    year: 2022,
+    power: 320,
+    seats: 5
+  },
+
+  { 
+    name: "Opel Insignia", 
+    description: "Nagy szedán elegáns formával és kényelmes utazási élménnyel.", 
+    image: "autok/insignia.jpg",
+    price: 8999,
+    doors: 4,
+    fuel: "Dízel",
+    year: 2019,
+    power: 170,
+    seats: 5
+  },
+
+  { 
+    name: "Skoda Kamiq", 
+    description: "Kompakt SUV modern technológiákkal és biztonságos vezethetőséggel.", 
+    image: "autok/kamiq.jpg",
+    price: 8499,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2021,
+    power: 110,
+    seats: 5
+  },
+
+  { 
+    name: "Fiat Panda", 
+    description: "Kis méretű, megbízható városi autó olcsó fenntartással.", 
+    image: "autok/panda.jpg",
+    price: 5499,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2017,
+    power: 69,
     seats: 4
   },
+
   { 
-    name: "Wagen A11", 
-    description: "Luxus terepjáró, prémium élmény.", 
-    image: "lakasok/lakas4.jpg",
-    price: 11999,
+    name: "Subaru Forester", 
+    description: "Összkerékhajtású SUV kiváló terepképességgel és biztonsággal.", 
+    image: "autok/forester.jpg",
+    price: 11499,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2021,
+    power: 182,
+    seats: 5
+  },
+  
+  { 
+    name: "Seat Leon", 
+    description: "Sportos kompakt autó modern megjelenéssel és agilis vezethetőséggel.", 
+    image: "autok/leon.jpg",
+    price: 8499,
+    doors: 5,
+    fuel: "Benzin",
+    year: 2020,
+    power: 150,
+    seats: 5
+  },
+  { 
+    name: "Nissan Qashqai", 
+    description: "Népszerű családi SUV modern biztonsági rendszerekkel.", 
+    image: "autok/qashqai.jpg",
+    price: 9999,
     doors: 5,
     fuel: "Hibrid",
     year: 2022,
@@ -122,82 +534,53 @@ const cars = [
     seats: 5
   },
   { 
-    name: "Wagen A12", 
-    description: "Teljesen elektromos, modern technológia.", 
-    image: "lakasok/lakas5.jpg",
-    price: 10999,
+    name: "Toyota Hilux", 
+    description: "Masszív pick-up, nagy teherbírással és megbízható motorral.", 
+    image: "autok/hilux.jpg",
+    price: 12499,
     doors: 4,
-    fuel: "Elektromos",
-    year: 2023,
-    power: 170,
-    seats: 5
-  },
-  { 
-    name: "Wagen A13", 
-    description: "Elegáns, kényelmes, megbízható.", 
-    image: "lakasok/lakas6.jpg",
-    price: 6999,
-    doors: 4,
-    fuel: "Benzin",
-    year: 2018,
-    power: 100,
-    seats: 5
-  },
-  { 
-    name: "Wagen A14", 
-    description: "Luxus terepjáró, prémium élmény.", 
-    image: "lakasok/lakas7.jpg",
-    price: 12999,
-    doors: 5,
     fuel: "Dízel",
-    year: 2023,
-    power: 250,
-    seats: 7
-  },
-  { 
-    name: "Wagen A15", 
-    description: "Teljesen elektromos, modern technológia.", 
-    image: "lakasok/lakas1.jpg",
-    price: 8999,
-    doors: 4,
-    fuel: "Elektromos",
     year: 2020,
-    power: 140,
-    seats: 4
+    power: 204,
+    seats: 5
   },
   { 
-    name: "Wagen A16", 
-    description: "Elegáns, kényelmes, megbízható.", 
-    image: "lakasok/lakas2.jpg",
+    name: "Citroen C3 Aircross", 
+    description: "Divatos kis SUV kényelmes felfüggesztéssel és praktikus belsővel.", 
+    image: "autok/c3aircross.jpg",
     price: 7999,
-    doors: 2,
+    doors: 5,
     fuel: "Benzin",
     year: 2019,
-    power: 95,
-    seats: 2
+    power: 110,
+    seats: 5
   },
   { 
-    name: "Wagen A17", 
-    description: "Luxus terepjáró, prémium élmény.", 
-    image: "lakasok/lakas3.jpg",
-    price: 14999,
+    name: "Volvo V90", 
+    description: "Nagy prémium kombi magas komfortszinttel és modern biztonsággal.", 
+    image: "autok/v90.jpg",
+    price: 13999,
     doors: 5,
-    fuel: "Hibrid",
-    year: 2023,
-    power: 300,
-    seats: 7
+    fuel: "Dízel",
+    year: 2021,
+    power: 235,
+    seats: 5
   },
   { 
-    name: "Wagen A18", 
-    description: "Teljesen elektromos, modern technológia.", 
-    image: "lakasok/lakas4.jpg",
-    price: 11999,
-    doors: 4,
+    name: "Peugeot e-2008", 
+    description: "Elektromos crossover stílusos dizájnnal és halk működéssel.", 
+    image: "autok/e2008.jpg",
+    price: 10999,
+    doors: 5,
     fuel: "Elektromos",
     year: 2022,
-    power: 210,
+    power: 136,
     seats: 5
-  }
+  },
+
+
+
+  
 ];
 
 // Kártyák létrehozása
