@@ -14,7 +14,7 @@ const cars = [
   { 
     name: "Volkswagen Golf", 
     description: "Kényelmes, jó úttartás, sok extrával.", 
-    image: "autok/Volkswagen_Golf.jpg",
+    image: "autok/golf.jpg",
     price: 6499,
     doors: 5,
     fuel: "Benzin",
