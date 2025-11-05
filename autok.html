@@ -25,6 +25,22 @@
   <div class="nav-right"></div>
 </header>
 
+  <script>
+  window.onload = function() {
+  const params = new URLSearchParams(window.location.search);
+  const carName = params.get("car");
+
+  if (carName) {
+    const selectedCar = cars.find(c => c.name === carName);
+    if (selectedCar) {
+      showPopup(cars.indexOf(selectedCar));
+    }
+  } else {
+    createCards(); 
+  }
+};
+</script>
+
 <main>
   <div class="szuro-header">
     <button id="toggle-szuro" class="szuro-toggle">
@@ -419,4 +435,5 @@
     </div>
   </footer>
 <script src="kereses.js"></script>
+
 </body>
