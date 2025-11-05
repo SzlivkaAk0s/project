@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stilusFo.css">
+  <title>Autó Feltöltés</title>
+  <link rel="shortcut icon" href="logo2.2.ico" type="image/x-icon">
+</head>
+
+<body>
+<header>
+  <nav>
+    <ul>
+        <li><a href="fooldal.html">Főoldal</a></li>
+        <li><a href="ajánlataink.html">Ajánlataink</a></li>
+        <li><a href="autok.html">Autók</a></li>
+        <li><a href="autofeltoltes.html">Autó feltöltés</a></li>
+        <li><a href="rolunk.html">Rólunk</a></li>
+      </ul>
+  </nav>
+  <div class="logo">
+    <a href="fooldal.html"><img src="logo1.1.png" alt="Logo"></a>
+  </div>
+  <div class="nav-right"></div>
+</header>
+
+<main>
+  <section class="aloldal">
+    <div class="bal-oldal">
+      <div class="leiras">
+        <h1>Autó Feltöltése</h1>
+        <p>Itt tudsz új autót hozzáadni a kínálathoz. Töltsd ki az alábbi űrlapot, és az autó automatikusan megjelenik a kártyák között.</p>
+      </div>
+      
+      <form id="auto-feltoltes-form" class="auto-form">
+        <div class="form-csoport">
+          <label for="auto-nev">Autó neve:</label>
+          <input type="text" id="auto-nev" name="auto-nev" required>
+        </div>
+        
+        <div class="form-csoport">
+          <label for="auto-leiras">Leírás:</label>
+          <textarea id="auto-leiras" name="auto-leiras" rows="3" required></textarea>
+        </div>
+        
+        <div class="form-csoport">
+          <label for="auto-kep">Kép:</label>
+          <input type="text" id="auto-kep" name="auto-kep" placeholder="pl. Jeep.jpg" required>
+        </div>
+        
+        <div class="form-csoport">
+          <label for="auto-ar">Napi bérleti díj (Ft):</label>
+          <input type="number" id="auto-ar" name="auto-ar" min="0" required>
+        </div>
+        
+        <div class="form-csoport">
+          <label for="auto-ajtok">Ajtók száma:</label>
+          <select id="auto-ajtok" name="auto-ajtok" required>
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="5">5+</option>
+          </select>
+        </div>
+        
+        <div class="form-csoport">
+          <label for="auto-uzemanyag">Üzemanyag típusa:</label>
+          <select id="auto-uzemanyag" name="auto-uzemanyag" required>
+            <option value="Benzin">Benzin</option>
+            <option value="Dízel">Dízel</option>
+            <option value="Hibrid">Hibrid</option>
+            <option value="Elektromos">Elektromos</option>
+          </select>
+        </div>
+        
+        <div class="form-csoport">
+          <label for="auto-evjarat">Évjárat:</label>
+          <input type="number" id="auto-evjarat" name="auto-evjarat" min="2000" max="2025" required>
+        </div>
+        
+        <div class="form-csoport">
+          <label for="auto-teljesitmeny">Teljesítmény (LE):</label>
+          <input type="number" id="auto-teljesitmeny" name="auto-teljesitmeny" min="0" required>
+        </div>
+        
+        <div class="form-csoport">
+          <label for="auto-ferohely">Férőhely:</label>
+          <select id="auto-ferohely" name="auto-ferohely" required>
+            <option value="2">2 személyes</option>
+            <option value="3">3 személyes</option>
+            <option value="4">4 személyes</option>
+            <option value="5">5 személyes</option>
+            <option value="6">6 személyes</option>
+            <option value="7">7 személyes</option>
+          </select>
+        </div>
+        
+        <div class="form-gombok">
+          <button type="submit" class="foglalas">Autó Hozzáadása</button>
+          <button type="reset" class="tobb">Űrlap Törlése</button>
+        </div>
+      </form>
+    </div>
+    
+    <div class="jobb-oldal">
+      <div class="szabad-helyek">
+        <h2>Új Autók</h2>
+        <p>Az alábbi kártyák mutatják a legutóbb hozzáadott autókat:</p>
+        
+        <div id="generalt-kartyak" class="cards-container">
+          <!-- Ide kerülnek a generált kártyák -->
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--Footer-->
+  <footer>
+    <!--Bal oldali szöveg-->
+    <div class="footer-main">
+      <span>Elérhetőség</span>
+    </div>
+
+    <!--Közép szöveg-->
+    <div class="footer-extra">
+      <p>További információk: Itt megadhatod a céged adatait, linkeket vagy bármit, ami fontos.</p>
+    </div>
+  
+    <!--Jobb szöveg-->
+    <div class="footer-right footer-extra">
+      <!--Gmail-->
+      <a href="https://www.gmail.com" target="_blank">
+        <img src="Gmail_Logo.png" width="2%" alt="Gmail">
+      </a>
+
+      <!--Telefon-->
+      <div class="tooltip">
+        <img  src="Telefon_Logo.png" width="2%" alt="+36 30 852 5256"></span>
+        <span class="tooltiptext">+36 30 852 5256</span>
+      </div>
+
+      <!--Instagram-->
+      <a href="https://www.instagram.com" target="_blank">
+        <img src="Instagram_Logo.webp" width="2%" alt="Instagram">
+      </a>
+      
+      <!--Facebook-->
+      <a href="https://www.facebook.com" target="_blank">
+        <img src="Facebook_Logo.png" width="2%" alt="Facebook">
+      </a>
+  
+      <!--X-->
+      <a href="https://www.x.com" target="_blank">
+        <img src="X_Logo.png" width="2%" alt="X">
+      </a>
+  
+    </div>
+  </footer>
+<script src="autofeltoltes.js"></script>
+
+</body>
+</html>
