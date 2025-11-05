@@ -906,6 +906,14 @@ footer:hover .footer-extra {
   padding-bottom: 0px;
 }
 
+/*Ajánlat*/
+#ajanlatcucc{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
 /*Média*/
 @media (max-width: 768px) {
   header {
@@ -1114,4 +1122,5 @@ footer:hover .footer-extra {
     width: 98%;
     padding: 15px;
   }
+
 }
