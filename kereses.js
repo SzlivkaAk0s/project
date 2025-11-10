@@ -914,9 +914,17 @@ function setupEventListeners() {
   });
   
   // Foglalás gomb
-  document.getElementById('popup-reserve').addEventListener('click', () => {
-    alert('+36 30 852 5256 telefonszámon foglalhat!');
-    document.getElementById('popup').style.display = 'none';
+  document.getElementById("popup-reserve").addEventListener("click", () => {
+  const name = document.getElementById("popup-title").textContent;
+  const price = document.getElementById("popup-price").textContent.replace(" Ft", "");
+  const fuel = document.getElementById("popup-fuel").textContent;
+  const year = document.getElementById("popup-year").textContent;
+  const desc = document.getElementById("popup-description").textContent;
+  const image = document.getElementById("popup-img").src;
+
+  // Átirányítás foglalás oldalra az autó adataival
+  const url = `foglalas.html?name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}&fuel=${encodeURIComponent(fuel)}&year=${encodeURIComponent(year)}&description=${encodeURIComponent(desc)}&image=${encodeURIComponent(image)}`;
+  window.location.href = url;
   });
   
   // Kattintás a szűrőn kívülre bezárja a panelt
@@ -933,4 +941,5 @@ function setupEventListeners() {
 document.addEventListener('DOMContentLoaded', () => {
   createCards();
   setupEventListeners();
+
 });

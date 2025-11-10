@@ -16,6 +16,7 @@
         <li><a href="fooldal.html">Főoldal</a></li>
         <li><a href="ajánlataink.html">Ajánlataink</a></li>
         <li><a href="autok.html">Autók</a></li>
+        <li><a href="autofeltoltes.html">Autó feltöltés</a></li>
         <li><a href="rolunk.html">Rólunk</a></li>
       </ul>
   </nav>
@@ -26,48 +27,59 @@
 </header>
 
 <main class="aloldal">
-
-  <div class="bal info">
-    <div>
-      <h1>Legkedvezőbb ajánlat</h1>
-      <p>- - - -</p>
-    </div> 
+<div id="ajanlatcucc">
+  <section class="ajanlat">
+    <h1>Legkedvezőbb ajánlat</h1>
     <div class="card">
       <div class="image-box">
-        <img src="lakasok/lakas1.jpg" alt="Wagen A1">
+        <img id="best-img" src="" alt="Legjobb ajánlat">
       </div>
       <div class="info">
-        <div class="adat">
-          <h2>Wagen A1</h2>
-          <p>Elegáns, kényelmes, megbízható.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
-        </div>
+        <h2 id="best-name"></h2>
+        <p id="best-desc"></p>
+        <br>
+        <p id="best-price"></p>
+        <button class="tobb">Részletek</button>
       </div>
-
     </div>
-  </div>
+  </section>
 
 
-  <div class="jobb info">
-    <div>
-      <h1>Legnépszerűbb ajánlat</h1>
-      <p>- - - -</p>
-    </div> 
+
+  <section class="ajanlat">
+    <h1>Legnépszerűbb ajánlat</h1>
     <div class="card">
       <div class="image-box">
-        <img src="lakasok/lakas2.jpg" alt="Wagen A2">
+        <img id="popular-img" src="" alt="Legnépszerűbb ajánlat">
       </div>
       <div class="info">
-        <div class="adat">
-          <h2>Wagen A2</h2>
-          <p>Luxus terepjáró, prémium élmény.</p><br>
-          <a href="#"><button class="tobb">Részletek</button></a>
-        </div>
+        <h2 id="popular-name"></h2>
+        <p id="popular-desc"></p>
+        <br>
+        <p id="popular-price"></p>
+        <button class="tobb">Részletek</button>
       </div>
     </div>
-  </div>
+  </section>
 
+  <section class="ajanlat">
+    <h1>Akció</h1>
+    <div class="card">
+      <div class="image-box">
+        <img id="sale-img" src="" alt="Akciós ajánlat">
+      </div>
+      <div class="info">
+        <h2 id="sale-name"></h2>
+        <p id="sale-desc"></p>
+        <br>
+        <p id="sale-price"></p>
+        <button class="tobb">Részletek</button>
+      </div>
+    </div>
+  </section>
+</div>
 </main>
+<script src="random.js"></script>
 
 <!--Footer-->
   <footer>
@@ -112,4 +124,5 @@
     </div>
   </footer>
 </body>
+
 </html>

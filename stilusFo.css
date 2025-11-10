@@ -40,12 +40,14 @@ nav ul li a {
   text-decoration: none;
   padding: 14px 20px;
   transition: background-color 0.3s;
+  font-weight: bold;
 }
 
 nav ul li a:hover {
   background-color: #A4A71E;
   color: #000;
 }
+
 
 .dropdown-content {
   display: none;
@@ -844,6 +846,74 @@ footer:hover .footer-extra {
   font-size: 1.2rem;
 }
 
+/* Űrlap stílusok */
+.auto-form {
+  background: #ffffd6;
+  border: 2px solid #1F2605;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.form-csoport {
+  margin-bottom: 15px;
+}
+
+.form-csoport label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #1F6521;
+}
+
+.form-csoport input,
+.form-csoport select,
+.form-csoport textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #1F2605;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-csoport textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-gombok {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.form-gombok button {
+  flex: 1;
+}
+
+/* Generált kártyák konténer */
+#generalt-kartyak {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.kozepre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0px;
+}
+
+/*Ajánlat*/
+#ajanlatcucc{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
 /*Média*/
 @media (max-width: 768px) {
   header {
@@ -931,6 +1001,7 @@ footer:hover .footer-extra {
 
   .szuro-inner {
     padding: 15px;
+    margin-top: 95px;
   }
 
   .szuro-panel label {
@@ -996,8 +1067,15 @@ footer:hover .footer-extra {
   }
 
   .szuro-header {
-    top: 70px;
+    top: 165px;
     padding: 8px 15px;
+  }
+  .form-gombok {
+    flex-direction: column;
+  }
+  
+  #generalt-kartyak {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
 
@@ -1044,4 +1122,5 @@ footer:hover .footer-extra {
     width: 98%;
     padding: 15px;
   }
+
 }
