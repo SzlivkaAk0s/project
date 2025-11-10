@@ -135,7 +135,7 @@ const cars = [
   { 
     name: "Mazda MX-5 Roadster", 
     description: "Könnyű, hátsókerekes sportautó, élvezetes vezetéshez.", 
-    image: "autok/mazda_MX5.jpg",
+    image: "autok/mazda_Mx5.jpg",
     price: 14999,
     doors: 2,
     fuel: "Benzin",
@@ -262,7 +262,7 @@ const cars = [
   { 
     name: "Jeep Renegade", 
     description: "Robusztus kis SUV, terepre és városba egyaránt alkalmas.", 
-    image: "autok/jeep.jpg",
+    image: "autok/Jeep.jpg",
     price: 9999,
     doors: 5,
     fuel: "Hibrid",
@@ -334,7 +334,7 @@ const cars = [
   { 
     name: "Kia Sportage", 
     description: "Középkategóriás SUV kényelmes utazáshoz és családi használathoz.", 
-    image: "autok/sportage.jpg",
+    image: "autok/Sportage.jpg",
     price: 10499,
     doors: 5,
     fuel: "Hibrid",
@@ -370,7 +370,7 @@ const cars = [
   { 
     name: "BMW X3", 
     description: "Tágas prémium SUV kényelmes belsővel és erős motorral.", 
-    image: "autok/x3.jpg",
+    image: "autok/X3.jpg",
     price: 13999,
     doors: 5,
     fuel: "Dízel",
@@ -466,7 +466,7 @@ const cars = [
   { 
     name: "Opel Insignia", 
     description: "Nagy szedán elegáns formával és kényelmes utazási élménnyel.", 
-    image: "autok/insignia.jpg",
+    image: "autok/Insignia.jpg",
     price: 8999,
     doors: 4,
     fuel: "Dízel",
@@ -478,7 +478,7 @@ const cars = [
   { 
     name: "Skoda Kamiq", 
     description: "Kompakt SUV modern technológiákkal és biztonságos vezethetőséggel.", 
-    image: "autok/kamiq.jpg",
+    image: "autok/Kamiq.jpg",
     price: 8499,
     doors: 5,
     fuel: "Benzin",
