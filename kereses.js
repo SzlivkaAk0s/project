@@ -69,7 +69,7 @@ const cars = [
   { 
     name: "Opel Astra", 
     description: "Kiegyensúlyozott, kényelmes napi használatra.", 
-    image: "autok/opel_astra.jpg",
+    image: "autok/opel_Astra.jpg",
     price: 5699,
     doors: 5,
     fuel: "Benzin",
@@ -91,7 +91,7 @@ const cars = [
   { 
     name: "Hyundai i30", 
     description: "Megbízható, kényelmes városi és országúti autó.", 
-    image: "autok/Hyundai_i30.jpg",
+    image: "autok/hyundai_i30.jpg",
     price: 5799,
     doors: 5,
     fuel: "Benzin",
@@ -113,7 +113,7 @@ const cars = [
   { 
     name: "BMW i3", 
     description: "Elektromos városi autó prémium belsővel és csendes futással.", 
-    image: "autok/bmw_i3.jpg",
+    image: "autok/Bmw_i3.jpg",
     price: 11999,
     doors: 3,
     fuel: "Elektromos",
@@ -135,7 +135,7 @@ const cars = [
   { 
     name: "Mazda MX-5 Roadster", 
     description: "Könnyű, hátsókerekes sportautó, élvezetes vezetéshez.", 
-    image: "autok/Mazda_MX5.jpg",
+    image: "autok/mazda_MX5.jpg",
     price: 14999,
     doors: 2,
     fuel: "Benzin",
