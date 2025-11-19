@@ -1,4 +1,3 @@
-// Autó adatok - minden autóhoz egyedi adatok
 const cars = [
   { 
     name: "Toyota Corolla", 
@@ -629,7 +628,6 @@ const cars = [
   
 ];
 
-// Kártyák létrehozása
 function createCards() {
   const container = document.querySelector('.cards-container');
   container.innerHTML = '';
@@ -664,7 +662,6 @@ function createCards() {
     container.appendChild(card);
   });
   
-  // Részletek gomb eseménykezelők
   document.querySelectorAll('.details-btn').forEach(btn => {
     btn.addEventListener('click', function() {
       const card = this.closest('.card');
@@ -674,7 +671,6 @@ function createCards() {
   });
 }
 
-// Popup megjelenítése
 function showPopup(index) {
   const car = cars[index];
   document.getElementById('popup-title').textContent = car.name;
@@ -690,7 +686,6 @@ function showPopup(index) {
   document.getElementById('popup').style.display = 'flex';
 }
 
-// Aktív szűrők megjelenítése
 function updateActiveFilters() {
   const activeFiltersContainer = document.getElementById('active-filters');
   activeFiltersContainer.innerHTML = '';
@@ -711,7 +706,6 @@ function updateActiveFilters() {
     activeFiltersContainer.appendChild(badge);
   });
   
-  // Remove gombok eseménykezelői
   document.querySelectorAll('.filter-badge .remove').forEach(btn => {
     btn.addEventListener('click', function() {
       const type = this.dataset.type;
@@ -725,7 +719,6 @@ function updateActiveFilters() {
   });
 }
 
-// Szűrő értékek megjelenítési neve
 function getFilterDisplayName(type, value) {
   const names = {
     price: {
@@ -765,7 +758,6 @@ function getFilterDisplayName(type, value) {
   return names[type]?.[value] || value;
 }
 
-// Szűrők alkalmazása
 function applyFilters() {
   const priceFilters = Array.from(document.querySelectorAll('.price-filter:checked')).map(cb => cb.value);
   const doorFilters = Array.from(document.querySelectorAll('.door-filter:checked')).map(cb => parseInt(cb.value));
@@ -787,7 +779,6 @@ function applyFilters() {
     
     let showCard = true;
     
-    // Ár szűrés
     if (priceFilters.length > 0) {
       let priceMatch = false;
       priceFilters.forEach(filter => {
@@ -799,17 +790,14 @@ function applyFilters() {
       if (!priceMatch) showCard = false;
     }
     
-    // Ajtószám szűrés
     if (doorFilters.length > 0) {
       if (!doorFilters.includes(doors)) showCard = false;
     }
-    
-    // Üzemanyag szűrés
+
     if (fuelFilters.length > 0) {
       if (!fuelFilters.includes(fuel)) showCard = false;
     }
-    
-    // Évjárat szűrés
+
     if (yearFilters.length > 0) {
       let yearMatch = false;
       yearFilters.forEach(filter => {
@@ -820,8 +808,7 @@ function applyFilters() {
       });
       if (!yearMatch) showCard = false;
     }
-    
-    // Teljesítmény szűrés
+
     if (powerFilters.length > 0) {
       let powerMatch = false;
       powerFilters.forEach(filter => {
@@ -832,21 +819,17 @@ function applyFilters() {
       });
       if (!powerMatch) showCard = false;
     }
-    
-    // Férőhely szűrés
+
     if (seatsFilters.length > 0) {
       if (!seatsFilters.includes(seats)) showCard = false;
     }
-    
-    // Kártya megjelenítése/elrejtése
+
     card.style.display = showCard ? 'flex' : 'none';
     if (showCard) visibleCount++;
   });
   
-  // Aktív szűrők frissítése
   updateActiveFilters();
   
-  // Ha nincs találat, üzenet megjelenítése
   const noResults = document.querySelector('.no-results');
   if (visibleCount === 0) {
     if (!noResults) {
@@ -861,35 +844,28 @@ function applyFilters() {
   }
 }
 
-// Eseménykezelők beállítása
 function setupEventListeners() {
   const szuroPanel = document.getElementById('szuro-panel');
   const toggleButton = document.getElementById('toggle-szuro');
   
-  // Szűrő panel megnyitása/bezárása
   toggleButton.addEventListener('click', () => {
     szuroPanel.classList.toggle('open');
     toggleButton.classList.toggle('active');
   });
   
-  // Automatikus szűrés kikapcsolása és Alkalmaz gomb
   document.querySelectorAll('.szuro-panel input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', () => {
-      // Itt nem hívjuk meg az applyFilters()-t, csak az Alkalmaz gomb fogja
     });
   });
-  
-  // Alkalmaz gomb
+
   document.getElementById('apply-filters').addEventListener('click', () => {
     applyFilters();
-    // Opcionálisan bezárhatjuk a szűrő panelt alkalmazás után
     if (window.innerWidth <= 768) {
       szuroPanel.classList.remove('open');
       toggleButton.classList.remove('active');
     }
   });
   
-  // Szűrők törlése
   document.getElementById('reset-filters').addEventListener('click', () => {
     document.querySelectorAll('.szuro-panel input[type="checkbox"]').forEach(checkbox => {
       checkbox.checked = false;
@@ -897,7 +873,6 @@ function setupEventListeners() {
     applyFilters();
   });
   
-  // Popup bezárása
   document.getElementById('close-popup').addEventListener('click', () => {
     document.getElementById('popup').style.display = 'none';
   });
@@ -906,14 +881,12 @@ function setupEventListeners() {
     document.getElementById('popup').style.display = 'none';
   });
   
-  // Popup bezárása kattintásra a háttérre
   document.getElementById('popup').addEventListener('click', (e) => {
     if (e.target === document.getElementById('popup')) {
       document.getElementById('popup').style.display = 'none';
     }
   });
-  
-  // Foglalás gomb
+
   document.getElementById("popup-reserve").addEventListener("click", () => {
   const name = document.getElementById("popup-title").textContent;
   const price = document.getElementById("popup-price").textContent.replace(" Ft", "");
@@ -922,12 +895,10 @@ function setupEventListeners() {
   const desc = document.getElementById("popup-description").textContent;
   const image = document.getElementById("popup-img").src;
 
-  // Átirányítás foglalás oldalra az autó adataival
   const url = `foglalas.html?name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}&fuel=${encodeURIComponent(fuel)}&year=${encodeURIComponent(year)}&description=${encodeURIComponent(desc)}&image=${encodeURIComponent(image)}`;
   window.location.href = url;
   });
-  
-  // Kattintás a szűrőn kívülre bezárja a panelt
+
   document.addEventListener('click', (e) => {
     if (!szuroPanel.contains(e.target) && !toggleButton.contains(e.target) && 
         szuroPanel.classList.contains('open')) {
@@ -937,7 +908,7 @@ function setupEventListeners() {
   });
 }
 
-// Oldal betöltésekor
+
 document.addEventListener('DOMContentLoaded', () => {
   createCards();
   setupEventListeners();

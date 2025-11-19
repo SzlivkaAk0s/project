@@ -1,4 +1,3 @@
-// Legkedvezőbb ajánlatok
 const bestOffers = [
   {
     name: "Mazda MX-5 Roadster",
@@ -20,7 +19,6 @@ const bestOffers = [
   }
 ];
 
-// Legnépszerűbb ajánlatok
 const popularOffers = [
   {
     name: "BMW I3",
@@ -63,12 +61,10 @@ const saleOffers = [
   }
 ];
 
-// Véletlenszerű elem kiválasztása
 function getRandomItem(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-// DOM elemek frissítése
 window.onload = function() {
   const best = getRandomItem(bestOffers);
   const popular = getRandomItem(popularOffers);
@@ -91,7 +87,6 @@ window.onload = function() {
 };
 
 
-// --- Részletek gombok eseménykezelői ---
 document.querySelectorAll(".ajanlat .tobb").forEach((button, index) => {
   button.addEventListener("click", () => {
     let offer;
@@ -99,8 +94,17 @@ document.querySelectorAll(".ajanlat .tobb").forEach((button, index) => {
     else if (index === 1) offer = document.getElementById("popular-name").textContent;
     else if (index === 2) offer = document.getElementById("sale-name").textContent;
 
-    // URL-be kódolva küldjük tovább a kiválasztott autó nevét
     const encodedName = encodeURIComponent(offer);
     window.location.href = `autok.html?car=${encodedName}`;
   });
 });
+
+function bookCar(type) {
+    let offerName;
+    if (type === 'best') offerName = document.getElementById("best-name").textContent;
+    else if (type === 'popular') offerName = document.getElementById("popular-name").textContent;
+    else if (type === 'sale') offerName = document.getElementById("sale-name").textContent;
+
+    const encodedName = encodeURIComponent(offerName);
+    window.location.href = `autok.html?car=${encodedName}`;
+  }

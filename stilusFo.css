@@ -98,7 +98,111 @@ nav ul {
   list-style: none;
   gap: 22ípx;
 }
+#ajanlatcucc {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 40px auto;
+  padding: 40px 20px;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
+.ajanlat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ajanlat h1 {
+  color: #1F6521;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ajanlat .card {
+  width: 100%;
+  max-width: 280px;
+  min-height: 400px;
+  background: white;
+  border: 3px solid #1F2605;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.ajanlat .card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(31, 101, 33, 0.3);
+  border-color: #A4A71E;
+  filter: drop-shadow(0px 0px 8px #A4A71E);
+}
+
+.ajanlat .image-box {
+  flex: 0 0 180px;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  border: 2px solid #A4A71E;
+}
+
+.ajanlat .image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.ajanlat .card:hover .image-box img {
+  transform: scale(1.1);
+}
+
+.ajanlat .info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.ajanlat .info h2 {
+  color: #1F6521;
+  font-size: 1.3rem;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.ajanlat .info p {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 5px 0;
+}
+
+.ajanlat .info p:last-of-type {
+  color: #1F6521;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: auto;
+  padding: 10px;
+  background: #ffffd6;
+  border-radius: 10px;
+}
+
+.ajanlat .tobb {
+  width: 100%;
+  margin-top: 15px;
+}
 nav a {
   text-decoration: none;
   font-weight: bold;
@@ -906,10 +1010,59 @@ footer:hover .footer-extra {
 #ajanlatcucc{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 100px;
   margin-top: 20px;
 }
 
+/* Foglalás oldal stílusok */
+.car-info {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.car-info img {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#reservation-form {
+  background: #ffffd6;
+  border: 2px solid #1F2605;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#reservation-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #1F6521;
+}
+
+#reservation-form input {
+  width: calc(100% - 20px);
+  padding: 8px;
+  border: 1px solid #1F2605;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+@media (max-width: 1024px) {
+  #ajanlatcucc {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 30px 15px;
+  }
+
+  .ajanlat h1 {
+    font-size: 1.2rem;
+  }
+
+  .ajanlat .card {
+    min-height: 380px;
+    max-width: 260px;
+  }
+}
 /*Média*/
 @media (max-width: 768px) {
   header {
@@ -918,7 +1071,32 @@ footer:hover .footer-extra {
     gap: 10px;
     text-align: center;
   }
+   #ajanlatcucc {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 25px 15px;
+    margin: 20px auto;
+  }
 
+  .ajanlat h1 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .ajanlat .card {
+    width: 100%;
+    max-width: 260px;
+    min-height: 350px;
+  }
+
+  .ajanlat .image-box {
+    height: 160px;
+    flex: 0 0 160px;
+  }
+
+  .ajanlat .info h2 {
+    font-size: 1.1rem;
+  }
   nav ul {
     gap: 10px;
     flex-wrap: wrap;
@@ -940,6 +1118,7 @@ footer:hover .footer-extra {
   }
 
   .bal-oldal .leiras h1 {
+    margin-top: 40px;
     font-size: 1.6rem;
   }
 
@@ -1118,6 +1297,7 @@ footer:hover .footer-extra {
 
 }
 
+/* Success Popup */
 .popup-success {
   position: fixed;
   top: 0;

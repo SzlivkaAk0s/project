@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Várakozás az oldal teljes betöltésére
   setTimeout(function() {
     initAutoFeltoltes();
   }, 100);
@@ -15,11 +14,8 @@ function initAutoFeltoltes() {
   }
 
   console.log('Auto feltöltés inicializálva');
-
-  // Betöltjük a mentett autókat
   betoltAutok();
 
-  // Űrlap eseménykezelő
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     ujAutoHozzaadasa();
@@ -29,11 +25,9 @@ function initAutoFeltoltes() {
     try {
       const mentettAutok = JSON.parse(localStorage.getItem('feltoltottAutok')) || [];
       console.log('Auto feltöltés: ' + mentettAutok.length + ' autó betöltve');
-      
-      // Töröljük a meglévő tartalmat
+
       kartyaContainer.innerHTML = '';
-      
-      // Hozzáadjuk az autókat
+
       mentettAutok.forEach(auto => {
         hozzaadAuto(auto);
       });
@@ -43,7 +37,7 @@ function initAutoFeltoltes() {
   }
 
   function hozzaadAuto(auto) {
-    // Ellenőrizzük, hogy már létezik-e
+
     if (document.querySelector(`.card[data-id="${auto.id}"]`)) {
       return;
     }
@@ -71,7 +65,6 @@ function initAutoFeltoltes() {
     
     kartyaContainer.appendChild(kartya);
     
-    // Eseménykezelők
     const detailsBtn = kartya.querySelector('.details-btn');
     const torlesBtn = kartya.querySelector('.torles-btn');
     
@@ -102,12 +95,10 @@ function initAutoFeltoltes() {
     mentAuto(autoAdatok);
     form.reset();
     
-    // Sikeres üzenet popup-pal
     const uploadPopup = document.getElementById("upload-success-popup");
     if (uploadPopup) {
       uploadPopup.classList.add("show");
 
-      // 2 másodperc múlva eltűnik
       setTimeout(() => {
         uploadPopup.classList.remove("show");
       }, 2000);
@@ -165,8 +156,7 @@ function initAutoFeltoltes() {
     `;
     
     document.body.appendChild(popupOverlay);
-    
-    // Eseménykezelők
+
     const bezaras = function() {
       document.body.removeChild(popupOverlay);
     };
@@ -175,7 +165,7 @@ function initAutoFeltoltes() {
     popupOverlay.querySelector('.tobb').addEventListener('click', bezaras);
     
     popupOverlay.querySelector('.foglalas').addEventListener('click', function() {
-      // Foglalás popup megjelenítése
+
       const successPopup = document.getElementById("success-popup");
       if (successPopup) {
         successPopup.classList.add("show");
@@ -196,24 +186,21 @@ function initAutoFeltoltes() {
   }
 
   function torolAuto(id, kartyaElem) {
-    // Megerősítő popup megjelenítése
+
     const confirmPopup = document.getElementById("confirm-delete-popup");
     if (confirmPopup) {
       confirmPopup.classList.add("show");
 
-      // IGEN gomb kezelése
+
       document.getElementById("confirm-delete-yes").onclick = () => {
         confirmPopup.classList.remove("show");
 
-        // Kártya eltávolítása
         kartyaElem.remove();
 
-        // Autó törlése a localStorage-ból
         const mentettAutok = JSON.parse(localStorage.getItem('feltoltottAutok')) || [];
         const frissitettAutok = mentettAutok.filter(auto => auto.id !== id);
         localStorage.setItem('feltoltottAutok', JSON.stringify(frissitettAutok));
 
-        // Siker popup megjelenítése
         const successPopup = document.getElementById("delete-success-popup");
         if (successPopup) {
           successPopup.classList.add("show");
@@ -224,7 +211,6 @@ function initAutoFeltoltes() {
         }
       };
 
-      // NEM gomb kezelése
       document.getElementById("confirm-delete-no").onclick = () => {
         confirmPopup.classList.remove("show");
       };
