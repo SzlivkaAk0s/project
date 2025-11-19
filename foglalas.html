@@ -66,10 +66,25 @@
 
     // Foglalás form kezelése
     document.getElementById('reservation-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert("Sikeres foglalás!");
-      window.location.href = "autok.html";
-    });
+    e.preventDefault();
+
+    // Popup megjelenítése
+    const popup = document.getElementById("success-popup");
+    popup.classList.add("show");
+
+    // 2 másodperc után bezár és átirányít
+    setTimeout(() => {
+        popup.classList.remove("show");
+        window.location.href = "autok.html";
+    }, 2000);
+});
+
   </script>
+  <div id="success-popup" class="popup-success">
+    <div class="popup-box">
+        ✔️ Sikeres foglalás!
+    </div>
+</div>
+
 </body>
 </html>

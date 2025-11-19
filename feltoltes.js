@@ -1,39 +1,53 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Várakozás az oldal teljes betöltésére
+  setTimeout(function() {
+    initAutoFeltoltes();
+  }, 100);
+});
+
+function initAutoFeltoltes() {
   const form = document.getElementById('auto-feltoltes-form');
   const kartyaContainer = document.getElementById('generalt-kartyak');
   
-  // Betöltjük a korábban hozzáadott autókat a localStorage-ból
+  if (!form || !kartyaContainer) {
+    console.log('Auto feltöltés: Űrlap vagy konténer nem található');
+    return;
+  }
+
+  console.log('Auto feltöltés inicializálva');
+
+  // Betöltjük a mentett autókat
   betoltAutok();
-  
+
+  // Űrlap eseménykezelő
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    // Űrlap adatainak összegyűjtése
-    const autoAdatok = {
-      nev: document.getElementById('auto-nev').value,
-      leiras: document.getElementById('auto-leiras').value,
-      kep: document.getElementById('auto-kep').value,
-      ar: parseInt(document.getElementById('auto-ar').value),
-      ajtok: parseInt(document.getElementById('auto-ajtok').value),
-      uzemanyag: document.getElementById('auto-uzemanyag').value,
-      evjarat: parseInt(document.getElementById('auto-evjarat').value),
-      teljesitmeny: parseInt(document.getElementById('auto-teljesitmeny').value),
-      ferohely: parseInt(document.getElementById('auto-ferohely').value),
-      id: Date.now() // Egyedi azonosító
-    };
-    
-    // Autó hozzáadása
-    hozzaadAuto(autoAdatok);
-    
-    // Űrlap alaphelyzetbe állítása
-    form.reset();
-    
-    // Sikeres üzenet
-    alert('Autó sikeresen hozzáadva!');
+    ujAutoHozzaadasa();
   });
-  
+
+  function betoltAutok() {
+    try {
+      const mentettAutok = JSON.parse(localStorage.getItem('feltoltottAutok')) || [];
+      console.log('Auto feltöltés: ' + mentettAutok.length + ' autó betöltve');
+      
+      // Töröljük a meglévő tartalmat
+      kartyaContainer.innerHTML = '';
+      
+      // Hozzáadjuk az autókat
+      mentettAutok.forEach(auto => {
+        hozzaadAuto(auto);
+      });
+    } catch (error) {
+      console.error('Auto feltöltés hiba:', error);
+    }
+  }
+
   function hozzaadAuto(auto) {
-    // Kártya létrehozása
+    // Ellenőrizzük, hogy már létezik-e
+    if (document.querySelector(`.card[data-id="${auto.id}"]`)) {
+      return;
+    }
+
     const kartya = document.createElement('div');
     kartya.className = 'card';
     kartya.dataset.id = auto.id;
@@ -49,30 +63,58 @@ document.addEventListener('DOMContentLoaded', function() {
           <br>
           <p>${auto.ar} Ft/nap</p>
           <br>
-          <button class="tobb details-btn">Részletek</button>
-          <button class="tobb torles-btn" style="margin-top: 5px; background: #e74c3c;">Törlés</button>
+          <button type="button" class="tobb details-btn">Részletek</button>
+          <button type="button" class="tobb torles-btn" style="margin-top: 5px; background: #e74c3c;">Törlés</button>
         </div>
       </div>
     `;
     
-    // Kártya hozzáadása a konténerhez
-    kartyaContainer.prepend(kartya);
+    kartyaContainer.appendChild(kartya);
     
-    // Eseménykezelők hozzáadása
-    kartya.querySelector('.details-btn').addEventListener('click', function() {
+    // Eseménykezelők
+    const detailsBtn = kartya.querySelector('.details-btn');
+    const torlesBtn = kartya.querySelector('.torles-btn');
+    
+    detailsBtn.addEventListener('click', function() {
       mutatReszletek(auto);
     });
     
-    kartya.querySelector('.torles-btn').addEventListener('click', function() {
+    torlesBtn.addEventListener('click', function() {
       torolAuto(auto.id, kartya);
     });
-    
-    // Autó mentése localStorage-ba
-    mentAuto(auto);
   }
-  
+
+  function ujAutoHozzaadasa() {
+    const autoAdatok = {
+      nev: document.getElementById('auto-nev').value,
+      leiras: document.getElementById('auto-leiras').value,
+      kep: document.getElementById('auto-kep').value,
+      ar: parseInt(document.getElementById('auto-ar').value),
+      ajtok: parseInt(document.getElementById('auto-ajtok').value),
+      uzemanyag: document.getElementById('auto-uzemanyag').value,
+      evjarat: parseInt(document.getElementById('auto-evjarat').value),
+      teljesitmeny: parseInt(document.getElementById('auto-teljesitmeny').value),
+      ferohely: parseInt(document.getElementById('auto-ferohely').value),
+      id: Date.now()
+    };
+    
+    hozzaadAuto(autoAdatok);
+    mentAuto(autoAdatok);
+    form.reset();
+    
+    // Sikeres üzenet popup-pal
+    const uploadPopup = document.getElementById("upload-success-popup");
+    if (uploadPopup) {
+      uploadPopup.classList.add("show");
+
+      // 2 másodperc múlva eltűnik
+      setTimeout(() => {
+        uploadPopup.classList.remove("show");
+      }, 2000);
+    }
+  }
+
   function mutatReszletek(auto) {
-    // Popup létrehozása a részletek megjelenítéséhez
     const popupOverlay = document.createElement('div');
     popupOverlay.className = 'popup-overlay';
     popupOverlay.style.display = 'flex';
@@ -116,62 +158,86 @@ document.addEventListener('DOMContentLoaded', function() {
           <p>${auto.leiras}</p>
         </div>
         <div class="popup-actions">
-          <button class="foglalas">Foglalás</button>
-          <button class="tobb">Bezárás</button>
+          <button type="button" class="foglalas">Foglalás</button>
+          <button type="button" class="tobb">Bezárás</button>
         </div>
       </div>
     `;
     
     document.body.appendChild(popupOverlay);
     
-    // Eseménykezelők a popup-hoz
-    popupOverlay.querySelector('.popup-close').addEventListener('click', function() {
+    // Eseménykezelők
+    const bezaras = function() {
       document.body.removeChild(popupOverlay);
-    });
+    };
     
-    popupOverlay.querySelector('.tobb').addEventListener('click', function() {
-      document.body.removeChild(popupOverlay);
-    });
+    popupOverlay.querySelector('.popup-close').addEventListener('click', bezaras);
+    popupOverlay.querySelector('.tobb').addEventListener('click', bezaras);
     
     popupOverlay.querySelector('.foglalas').addEventListener('click', function() {
-      alert('+36 30 852 5256 telefonszámon foglalhat!');
-      document.body.removeChild(popupOverlay);
+      // Foglalás popup megjelenítése
+      const successPopup = document.getElementById("success-popup");
+      if (successPopup) {
+        successPopup.classList.add("show");
+
+        setTimeout(() => {
+          successPopup.classList.remove("show");
+          window.location.href = "autok.html";
+        }, 2000);
+      }
+      bezaras();
     });
     
-    // Kattintás a háttérre bezárja a popup-ot
     popupOverlay.addEventListener('click', function(e) {
       if (e.target === popupOverlay) {
-        document.body.removeChild(popupOverlay);
+        bezaras();
       }
     });
   }
-  
+
   function torolAuto(id, kartyaElem) {
-    if (confirm('Biztosan törölni szeretnéd ezt az autót?')) {
-      // Kártya eltávolítása a DOM-ból
-      kartyaElem.remove();
-      
-      // Autó eltávolítása a localStorage-ból
-      const mentettAutok = JSON.parse(localStorage.getItem('feltoltottAutok')) || [];
-      const frissitettAutok = mentettAutok.filter(auto => auto.id !== id);
-      localStorage.setItem('feltoltottAutok', JSON.stringify(frissitettAutok));
-      
-      alert('Autó sikeresen törölve!');
+    // Megerősítő popup megjelenítése
+    const confirmPopup = document.getElementById("confirm-delete-popup");
+    if (confirmPopup) {
+      confirmPopup.classList.add("show");
+
+      // IGEN gomb kezelése
+      document.getElementById("confirm-delete-yes").onclick = () => {
+        confirmPopup.classList.remove("show");
+
+        // Kártya eltávolítása
+        kartyaElem.remove();
+
+        // Autó törlése a localStorage-ból
+        const mentettAutok = JSON.parse(localStorage.getItem('feltoltottAutok')) || [];
+        const frissitettAutok = mentettAutok.filter(auto => auto.id !== id);
+        localStorage.setItem('feltoltottAutok', JSON.stringify(frissitettAutok));
+
+        // Siker popup megjelenítése
+        const successPopup = document.getElementById("delete-success-popup");
+        if (successPopup) {
+          successPopup.classList.add("show");
+
+          setTimeout(() => {
+            successPopup.classList.remove("show");
+          }, 2000);
+        }
+      };
+
+      // NEM gomb kezelése
+      document.getElementById("confirm-delete-no").onclick = () => {
+        confirmPopup.classList.remove("show");
+      };
     }
   }
-  
+
   function mentAuto(auto) {
     const mentettAutok = JSON.parse(localStorage.getItem('feltoltottAutok')) || [];
-    mentettAutok.push(auto);
-    localStorage.setItem('feltoltottAutok', JSON.stringify(mentettAutok));
-  }
-  
-  function betoltAutok() {
-    const mentettAutok = JSON.parse(localStorage.getItem('feltoltottAutok')) || [];
+    const letezoIndex = mentettAutok.findIndex(a => a.id === auto.id);
     
-    // Kártyák létrehozása a mentett autókhoz
-    mentettAutok.forEach(auto => {
-      hozzaadAuto(auto);
-    });
+    if (letezoIndex === -1) {
+      mentettAutok.push(auto);
+      localStorage.setItem('feltoltottAutok', JSON.stringify(mentettAutok));
+    }
   }
-});
+}
