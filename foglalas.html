@@ -25,7 +25,7 @@
   </div>
   <div class="nav-right"></div>
 </header>
-
+  <main class="foglalas-main">
     <div class="car-info">
       <img id="car-image" src="" alt="Autó képe" style="width:300px;">
       <h3 id="car-name"></h3>
@@ -47,6 +47,49 @@
     </form>
   </main>
 
+    <!--Footer-->
+  <footer>
+    <!--Bal oldali szöveg-->
+    <div class="footer-main">
+      <span>Elérhetőség</span>
+    </div>
+
+    <!--Közép szöveg-->
+    <div class="footer-extra">
+      <p>További információk: Itt megadhatod a céged adatait, linkeket vagy bármit, ami fontos.</p>
+    </div>
+  
+    <!--Jobb szöveg-->
+    <div class="footer-right footer-extra">
+      <!--Gmail-->
+      <a href="https://www.gmail.com" target="_blank">
+        <img src="Gmail_Logo.png" width="2%" alt="Gmail">
+      </a>
+
+      <!--Telefon-->
+      <div class="tooltip">
+        <img  src="Telefon_Logo.png" width="2%" alt="+36 30 852 5256"></span>
+        <span class="tooltiptext">+36 30 852 5256</span>
+      </div>
+
+      <!--Instagram-->
+      <a href="https://www.instagram.com" target="_blank">
+        <img src="Instagram_Logo.webp" width="2%" alt="Instagram">
+      </a>
+      
+      <!--Facebook-->
+      <a href="https://www.facebook.com" target="_blank">
+        <img src="Facebook_Logo.png" width="2%" alt="Facebook">
+      </a>
+  
+      <!--X-->
+      <a href="https://www.x.com" target="_blank">
+        <img src="X_Logo.png" width="2%" alt="X">
+      </a>
+  
+    </div>
+  </footer>
+  
   <script>
     const params = new URLSearchParams(window.location.search);
     const name = params.get('name');
@@ -80,7 +123,7 @@
     <div class="popup-box">
         ✔️ Sikeres foglalás!
     </div>
-</div>
+  </div>
 
 </body>
 </html>

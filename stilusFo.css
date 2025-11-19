@@ -229,7 +229,11 @@ nav a:hover {
 .logo a:active img {
   transform: scale(1);
 }
-
+.foglalas-main {
+  margin: 120px auto 80px auto;
+  padding: 20px;
+  max-width: 600px;
+}
 /*Body*/
 body {
   background: 
@@ -1076,6 +1080,11 @@ footer:hover .footer-extra {
     gap: 25px;
     padding: 25px 15px;
     margin: 20px auto;
+  }
+
+  .foglalas-main {
+    margin: 220px auto 60px auto;
+    padding: 15px;
   }
 
   .ajanlat h1 {
