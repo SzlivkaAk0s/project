@@ -45,10 +45,32 @@
     </div>
     <a href="autok.html"><button class="foglalas">Fedezd fel az autókat</button></a>
   </div>
-
   <div class="jobb-oldal">
-    <a href="autok.html"><img src="autok/Jeep.jpg" alt="Bemutató autó" style="border-radius:15px; width:100%; box-shadow:0 4px 10px rgba(0,0,0,0.2);"></a>
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <a href="autok.html"><img class="showImg" src="autok/leon.jpg" style="width:100%"></a>
+      
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <a href="autok.html"><img class="showImg" src="autok/dachia.jpg" style="width:100%"></a>
+      
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <a href="autok.html"><img src="autok/glc.jpg" style="width:100%"></a>
+      
+    </div>
   </div>
+  <br>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  <script src="javascript/slideshow.js"></script>
 </main>
 
 <!--Footer-->
@@ -84,6 +106,7 @@
     </a>
   </div>
 </footer>
+
 </body>
 </html>
 
