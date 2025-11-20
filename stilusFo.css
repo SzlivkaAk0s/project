@@ -1385,3 +1385,46 @@ footer:hover .footer-extra {
     to { transform: scale(1); opacity: 1; }
 }
 
+#confirm-delete-yes{
+  border: none; 
+  border-radius: 20px; 
+  width: 100%;
+  padding: 8px 14px; 
+  font-weight: bold; 
+  cursor: pointer;
+  background: #2E8B57; 
+  color: white; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  margin: 5px 0px;
+}
+
+#confirm-delete-no{
+  order: none; 
+  border-radius: 20px; 
+  width: 100%;
+  padding: 8px 14px; 
+  font-weight: bold; 
+  cursor: pointer;
+  background: rgb(216, 58, 58); 
+  color: white; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.popup-btn:hover {
+  background: linear-gradient(135deg, #b7b217, #aba60b);
+  color: #fffdce;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+#confirm-delete-yes:hover{
+  box-shadow: 0 6px 14px rgba(10, 219, 69, 0.53);
+}
+
+#confirm-delete-no:hover{
+  box-shadow: 0 6px 14px rgba(210, 18, 18, 0.53);
+}
+
